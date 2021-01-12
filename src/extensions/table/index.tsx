@@ -1,5 +1,4 @@
-import * as React from 'react'
-import styled from 'styled-components'
+import * as React from 'react';
 import {
   addColumnAfter,
   addColumnBefore,
@@ -9,24 +8,22 @@ import {
   deleteRow,
   mergeCells,
   splitCell,
-  toggleHeaderCell,
   goToNextCell,
   tableEditing,
-  columnResizing,
   tableNodes
 } from 'prosemirror-tables'
 import { setBlockType } from 'prosemirror-commands'
 import * as uuid from 'uuid/v4'
 import { toggleCell } from './util';
-import TableIcon from '../../components/icons/Table'
-import LeftInsertIcon from '../../components/icons/LeftInsert'
-import RightInsertIcon from '../../components/icons/RightInsert'
-import TopInsertIcon from '../../components/icons/TopInsert'
-import BottomInsertIcon from '../../components/icons/BottomInsert'
-import SplitIcon from '../../components/icons/Split'
-import MergeIcon from '../../components/icons/Merge'
-import RemoveRowIcon from '../../components/icons/RemoveRow';
-import RemoveColIcon from '../../components/icons/RemoveCol';
+import TableIcon from '../../components/icons/table'
+import LeftInsertIcon from '../../components/icons/left-insert'
+import RightInsertIcon from '../../components/icons/right-insert'
+import TopInsertIcon from '../../components/icons/top-insert'
+import BottomInsertIcon from '../../components/icons/bottom-insert'
+import SplitIcon from '../../components/icons/split'
+import MergeIcon from '../../components/icons/merge'
+import RemoveRowIcon from '../../components/icons/remove-row';
+import RemoveColIcon from '../../components/icons/remove-col';
 
 import { createTable, blockActive } from '../../utils'
 import { Extension, ExtensionProps } from '../../types'
@@ -50,11 +47,6 @@ const schemas = tableNodes({
   }
 })
 
-const CellButton = styled(Button)`
-  .icon {
-    font-size: 30px;
-  }
-`;
 
 export default class Table extends Extension {
   constructor(props?: ExtensionProps) {
@@ -140,93 +132,97 @@ export default class Table extends Extension {
 
   customInlineMenu({ state, dispatch }) {
     return (<>
-      <CellButton
+      <Button
         type="button"
+        className="smartblock-cell-btn"
         onClick={() => {
           mergeCells(state, dispatch);
         }}
       >
         <MergeIcon style={{ width: '24px', height: '24px' }} />
-      </CellButton>
-      <CellButton
+      </Button>
+      <Button
         type="button"
+        className="smartblock-cell-btn"
         onClick={() => {
           splitCell(state, dispatch);
         }}
       >
         <SplitIcon style={{ width: '24px', height: '24px' }} />
-      </CellButton>
-      <CellButton
-          type="button"
-          onClick={() => {
-            toggleCell('th')(state, dispatch);
-          }}
-        >
-          <span style={{ display: 'inline-block', verticalAlign: 'text-bottom'}}>th</span>
-      </CellButton>
-      <CellButton
-          type="button"
-          onClick={() => {
-            toggleCell('td')(state, dispatch);
-          }}
-        >
-          <span style={{ display: 'inline-block', verticalAlign: 'text-bottom'}}>td</span>
-      </CellButton>
+      </Button>
+      <Button
+        type="button"
+        className="smartblock-cell-btn"
+        onClick={() => {
+          toggleCell('th')(state, dispatch);
+        }}
+      >
+        <span style={{ display: 'inline-block', verticalAlign: 'text-bottom' }}>th</span>
+      </Button>
+      <Button
+        type="button"
+        className="smartblock-cell-btn"
+        onClick={() => {
+          toggleCell('td')(state, dispatch);
+        }}
+      >
+        <span style={{ display: 'inline-block', verticalAlign: 'text-bottom' }}>td</span>
+      </Button>
     </>)
   }
 
   customMenu({ state, dispatch }) {
     return (
       <>
-        <CellButton
+        <Button
           type="button"
           onClick={() => {
             addColumnAfter(state, dispatch);
           }}
         >
           <RightInsertIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
-        <CellButton
+        </Button>
+        <Button
           type="button"
           onClick={() => {
             addColumnBefore(state, dispatch);
           }}
         >
           <LeftInsertIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
-        <CellButton
+        </Button>
+        <Button
           type="button"
           onClick={() => {
             addRowBefore(state, dispatch);
           }}
         >
           <TopInsertIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
-        <CellButton
+        </Button>
+        <Button
           type="button"
           onClick={() => {
             addRowAfter(state, dispatch);
           }}
         >
           <BottomInsertIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
+        </Button>
 
-        <CellButton
+        <Button
           type="button"
           onClick={() => {
             deleteColumn(state, dispatch);
           }}
         >
           <RemoveColIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
-        <CellButton
+        </Button>
+        <Button
           type="button"
           onClick={() => {
             deleteRow(state, dispatch);
           }}
         >
           <RemoveRowIcon style={{ width: '24px', height: '24px' }} />
-        </CellButton>
+        </Button>
       </>
     )
   }

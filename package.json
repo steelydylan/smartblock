@@ -1,12 +1,15 @@
 {
-  "name": "smartblock",
-  "version": "1.2.8",
+  "name": "@steelydylan/smartblock",
+  "version": "1.3.4",
   "description": "intuitive block based wysiwyg editor",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "exports": {
     "./": "./lib"
   },
-  "type": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest **/*.test.tsx",
     "dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0 --port 3031",
@@ -16,13 +19,14 @@
     "np": "np --no-cleanup",
     "lint": "eslint ./src/ --fix --ext .ts,.tsx",
     "deploy": "npm-run-all -s build build:lib test np",
-    "build:svg": "npx @svgr/cli -d ./src/components/icons ./assets/images/icons --template ./tools/template.js --ext tsx --no-svgo"
+    "build:css": "node-sass ./scss/smartblock.scss ./css/smartblock.css",
+    "build:svg": "npx @svgr/cli -d ./src/components/icons ./assets/images/icons --template ./tools/template.js --ext tsx --no-svgo --filename-case kebab"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/appleple/smartblock"
   },
-  "homepage": "info@appleple.com",
+  "homepage": "https://appleple.github.io/smartblock/",
   "author": {
     "name": "steelydylan",
     "email": "hori@appleple.com"
@@ -38,6 +42,12 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-test-renderer": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^1.10.1",
+    "@types/prosemirror-commands": "^1.0.1",
+    "@types/prosemirror-keymap": "^1.0.1",
+    "@types/prosemirror-schema-basic": "^1.0.1",
+    "@types/prosemirror-schema-list": "^1.0.1",
+    "@types/prosemirror-transform": "^1.1.0",
+    "@types/styled-components": "^4.1.15",
     "@typescript-eslint/parser": "^1.10.1",
     "awesome-typescript-loader": "^5.2.1",
     "core-js": "^3.1.4",
@@ -61,6 +71,7 @@
     "jest": "^23.6.0",
     "jest-css-modules": "^2.1.0",
     "jest-prosemirror": "^0.7.2",
+    "node-sass": "^4.13.1",
     "np": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "preact": "^10.1.1",
@@ -84,12 +95,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@types/prosemirror-commands": "^1.0.1",
-    "@types/prosemirror-keymap": "^1.0.1",
-    "@types/prosemirror-schema-basic": "^1.0.1",
-    "@types/prosemirror-schema-list": "^1.0.1",
-    "@types/prosemirror-transform": "^1.1.0",
-    "@types/styled-components": "^4.1.15",
+    "classnames": "^2.2.6",
     "codemirror": "^5.48.0",
     "imagesloaded": "^4.1.4",
     "is-mobile": "^2.1.0",

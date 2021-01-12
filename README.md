@@ -1,6 +1,12 @@
-# SmartBlock
+# SmartBlock 
 
 ![](https://github.com/appleple/smartblock/workflows/Node%20CI/badge.svg)
+[![npm version](https://badge.fury.io/js/smartblock.svg)](https://badge.fury.io/js/smartblock)
+[![npm download](http://img.shields.io/npm/dm/smartblock.svg)](https://www.npmjs.com/package/smartblock)
+[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/appleple/smartblock/master/LICENSE)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Awesome%20block-based%20JavaScript%20%Editor&url=https://github.com/appleple/smartblock&via=appleplecom&hashtags=blocks,smartblock)
+
+
 
 SmartBlock.js is a JavaScript block based editor which enables you to write contents easily on websites even with **SmartPhone**.
 
@@ -31,10 +37,10 @@ $ npm install smartblock --save
 ```js
 import * as React from 'react';
 import { render } from 'react-dom';
-import { SmartBlock, GlobalStyle, Extensions } from 'smartblock';
+import 'smartblock/css/smartblock.css';
+import { SmartBlock, Extensions } from 'smartblock';
 
 render(<>
-  <GlobalStyle />
   <SmartBlock 
     extensions={Extensions}
     html={'<h2>Hello World</h2><p>hello</p>'}
@@ -43,50 +49,26 @@ render(<>
 </>, document.getElementById("app"));
 ```
 
-## Extensions
 
-### Blocks
+## Try it on CodeSandbox
 
-- Pragraph
-- Heading1
-- Heading2
-- Heading3
-- Heading4
-- Heading5
-- Heading6
-- OrderdList
-- BulletList
-- ListItem
-- Blockquoe
-- Table
-- Code
-- Image
+[![Edit hardcore-kalam-tghp9](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/hardcore-kalam-tghp9?fontsize=14&hidenavigation=1&theme=dark)
 
-### Marks
-
-- Emphasis
-- Strike
-- Strong
-- Underline
-
-### Utils
-
-- MoveDown
-- MoveUp
-- Trash
-- DefaultKeys
-- DefaultPlugins
 
 ## Customize
 
 You can add custom block like this
 
 ```js
+import * as React from 'react';
 import { Extensions, CustomBlock, CustomMark } from 'smartblock';
-Extensions.push(new CustomBlock({  tagName: 'div',  className: '.alert',  icon: <SomeIconComponent />});
+Extensions.push(new CustomBlock({  
+  tagName: 'div',
+  className: '.alert',
+  icon: <SomeIconComponent />
+});
 
 render(<>
-  <GlobalStyle />
   <SmartBlock 
     extensions={Extensions}
     html={'<h2>Hello World</h2><p>hello</p>'}
@@ -98,11 +80,16 @@ render(<>
 You can add custom inline element like this
 
 ```js
+import * as React from 'react';
 import { Extension, CustomBlock, CustomMark } from 'smartblock';
-Extension.push(new CustomMark({  tagName: 'span',  className: '.small',  icon: <SomeIconComponent />});
+import 'smartblock/css/smartblock.css';
+Extension.push(new CustomMark({  
+  tagName: 'span',
+  className: '.small',
+  icon: <SomeIconComponent />
+});
 
 render(<>
-  <GlobalStyle />
   <SmartBlock 
     extensions={Extensions}
     html={'<h2>Hello World</h2><p><small>hello</small></p>'}
@@ -124,3 +111,14 @@ render(<>
 | showBackBtn  | Btn to support history back will be shown                                                                   | Boolean            | false                                                                                                                                                                                                                                                                                                                                                                   |
 | autoSave     | The HTML will be stored to the localstorage every time the content is changed                               | Boolean            | false                                                                                                                                                                                                                                                                                                                                                                   |
 | getEditorRef | Get the editor ref object                                                                                   | Function           |                                                                                                                                                                                                                                                                                                                                                                         |
+## Download
+[Download ZIP](https://github.com/appleple/smartblock/archive/master.zip)
+
+## Github
+[https://github.com/appleple/smartblock](https://github.com/appleple/smartblock)
+
+## Contributor
+[@steelydylan](https://github.com/steelydylan)
+
+## License
+Code and documentation copyright 2020 by appleple, Inc. Code released under the [MIT License](https://github.com/appleple/smartblock/blob/master/LICENSE).

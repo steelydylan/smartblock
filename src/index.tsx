@@ -17,7 +17,6 @@ import {
   liftListItem,
   findSelectedNodeWithType
 } from './utils'
-import GlobalStyle from './utils/style'
 import { Dispatch, Extension } from './types'
 
 // extensions
@@ -51,12 +50,13 @@ import DefaultPlugins from './extensions/default-plugins'
 import Extensions from './extensions'
 
 // icons
-import Heading1Icon from './components/icons/Heading1'
-import Heading2Icon from './components/icons/Heading2'
-import Heading3Icon from './components/icons/Heading3'
-import Heading4Icon from './components/icons/Heading4'
-import Heading5Icon from './components/icons/Heading5'
-import Heading6Icon from './components/icons/Heading6'
+import Heading1Icon from './components/icons/heading1'
+import Heading2Icon from './components/icons/heading2'
+import Heading3Icon from './components/icons/heading3'
+import Heading4Icon from './components/icons/heading4'
+import Heading5Icon from './components/icons/heading5'
+import Heading6Icon from './components/icons/heading6'
+
 
 export {
   /* components */
@@ -66,7 +66,6 @@ export {
   Editor,
   InlineMenu,
   Menu,
-  GlobalStyle,
   /* 
     extensions 
   */

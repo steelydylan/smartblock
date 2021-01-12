@@ -1,12 +1,11 @@
 import React from 'react';
+import 'smartblock/css/smartblock.css';
 import Extensions from 'smartblock/lib/extensions';
 import Code from 'smartblock/lib/extensions/code';
 import Image from 'smartblock/lib/extensions/image';
 import { Link, withPrefix } from 'gatsby';
+import latestVersion from 'latest-version';
 const SmartBlock = typeof window === "undefined" ? <div/> : React.lazy(() => import('smartblock/lib/components/smartblock'));
-const GlobalStyle = React.lazy(() => import('smartblock/lib/utils/style'));
-
-
 const html = `<p>SmartBlock is a block styled editor created by JavaScript. Which gives you nice experience of editing contents at touchscreen. On this page you can see it in action. Try to edit this text ! :)</p>
 <h2>Features</h2>
 <ul>
@@ -30,17 +29,25 @@ export default (props) => {
   const [outputHTML, setOutputHTML] = React.useState('');
   const [outputJSON, setOutputJSON] = React.useState('');
   const [tab, setTab] = React.useState('html');
+  const [version, setVersion] = React.useState('');
+
+  React.useEffect(() => {
+    (async () => {
+      const version = await latestVersion('smartblock');
+      setVersion(version);
+    })();
+  }, []);
   
   return (<>
     <section className="hero is-center firstview">
       <div className="inner is-small">
         <div className="box" style={{ textAlign: 'center' }}>
-          <p className="margin-top-medium lead">Modern block styled editor <br />powered with React<br /> Easier to edit on touchscreen.</p>
+          <p className="margin-top-medium lead">Modern block styled editor <br />powered with React and ProseMirror<br /> Easier to edit on touchscreen.</p>
         </div>
       </div>
       <div className="inner hero-inner" style={{ textAlign: 'center'}}>
         <Link to="/get-started" className="button">Get Started</Link>
-        <p className="small">Current Version : Ver.1.2.5</p>
+        <p className="small">Current Version : Ver.{version}</p>
       </div>
     </section>
 
@@ -71,7 +78,6 @@ export default (props) => {
                     setOutputJSON(json);
                   }}
                 />
-                <GlobalStyle />
               </React.Suspense>
             )}
             </div>

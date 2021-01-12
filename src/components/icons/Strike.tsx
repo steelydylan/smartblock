@@ -2,7 +2,7 @@ import * as React from "react";
 
 const SvgStrike = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={1792} height={1792} viewBox="0 0 1792 1792" {...props}>
-    <title>{"\u53D6\u308A\u6D88\u3057\u7DDA"}</title>
+    <title>{"strikethrough"}</title>
     <g id="b9bc1bbe-05e0-4535-8a25-40617985e9ea" data-name="\u30E9\u30D9\u30EB">
       <polygon
         points="1422.66 992 1422.66 992 1600 992 1600 800 1600 800 1600 992 1422.66 992"

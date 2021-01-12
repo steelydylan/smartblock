@@ -19,7 +19,7 @@ $ npm install smartblock --save
 ### Load JavaScript from CDN
 
 ```html
-<script src="https://unpkg.com/smartblock@1.2.5/dist/smartblock.js"></script>
+<script src="https://unpkg.com/smartblock@1.3.1/dist/smartblock.js"></script>
 ```
 
 ## Usage
@@ -31,10 +31,10 @@ In your JavaScript file:
 ```jsx
 import * as React from 'react'; 
 import { render } from 'react-dom'; 
-import { SmartBlock, GlobalStyle, Extensions } from 'smartblock'; 
+import 'smartblock/css/smartblock.css';
+import { SmartBlock, Extensions } from 'smartblock'; 
 
 render(<>
-  <GlobalStyle />
   <SmartBlock
     extensions={Extensions}
     html={'<h2>Hello World</h2><p>hello</p>'} 
@@ -47,18 +47,23 @@ render(<>
 ### As an Native JavaScript
 
 ```html
-<script src="https://unpkg.com/smartblock@1.2.5/dist/smartblock.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/smartblock@1.3.2/css/smartblock.css" />
+<script src="https://unpkg.com/smartblock@1.3.2/dist/editor.js"></script>
+<script src="https://unpkg.com/smartblock@1.3.2/dist/extensions.js"></script>
 <!-- You can use smartblock without using JSX -->
 <!-- bundle size is much smaller than the package build with react !-->
 <script>
-SmartBlock('#app', {
+SmartBlock.Editor('#app', {
   html: '<h2>Hello World</h2><p>hello</p>',
+  extensions: SmartBlock.Extensions,
   onChange: function(result) {
     console.log(result.json, result.html);
   }
 });
 </script>
 ```
+
+[https://codepen.io/](https://codepen.io/appleple/pen/povGeQq#html-box)
 
 ### Compatibility
 

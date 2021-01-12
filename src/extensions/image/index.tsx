@@ -153,7 +153,7 @@ export default class Image extends Extension {
             marginRight: '1px',
             borderTopRightRadius: '0',
             borderBottomRightRadius: '0',
-            opacity: node.attrs.size !== 'small' ? '.6' : '1'
+            opacity: node.attrs.size !== 'small' ? .6 : 1
           }}
           onClick={() => {
             const attr = Object.assign({}, node.attrs, {
@@ -169,7 +169,7 @@ export default class Image extends Extension {
           style={{
             borderTopLeftRadius: '0',
             borderBottomLeftRadius: '0',
-            opacity: node.attrs.size === 'small' ? '.6' : '1',
+            opacity: node.attrs.size === 'small' ? .6 : 1,
           }}
           onClick={() => {
             const attr = Object.assign({}, node.attrs, {

@@ -33,6 +33,8 @@ render(<>
 
 ## Extensions
 
+![](https://uploads-ssl.webflow.com/605c83546f066766671acd34/605c83556f06671d821acd8d_photo-1416359658663-73a3834895eb.jpg)
+
 ### Blocks
 
 - Pragraph

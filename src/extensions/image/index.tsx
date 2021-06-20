@@ -68,7 +68,7 @@ export default class Image extends Extension {
       },
       parseDOM: [
         {
-          tag: "figure",
+          tag: "p",
           getAttrs(dom) {
             const img = dom.querySelector("img");
             if (!img) {
@@ -94,7 +94,7 @@ export default class Image extends Extension {
       ],
       toDOM: (node) => {
         return [
-          "figure",
+          "p",
           {
             "class": this.className,
           }, ["img", {

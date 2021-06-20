@@ -46,7 +46,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: build lib
-        run: npm run tsc
+        run: npm run build:lib
+      - name: build css
+        run: npm run build:css
       - name: publish to npm
         run: npm publish
         env:

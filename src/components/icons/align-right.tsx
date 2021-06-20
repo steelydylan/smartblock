@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const SvgAlignRight = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width={1792} height={1792} viewBox="0 0 1792 1792" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={1792}
+    height={1792}
+    viewBox="0 0 1792 1792"
+    {...props}
+  >
     <title>{"right"}</title>
     <g id="b944651b-fd76-4b8a-8459-b94e3d6fe7d4" data-name="\u30E9\u30D9\u30EB">
       <rect width={1792} height={256} />

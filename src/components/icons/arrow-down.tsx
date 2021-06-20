@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const SvgArrowDown = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width={20.495} height={20.496} viewBox="0 0 20.495 20.496" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20.495}
+    height={20.496}
+    viewBox="0 0 20.495 20.496"
+    {...props}
+  >
     <path
       id="\u30D1\u30B9_1343"
       data-name="\u30D1\u30B9 1343"

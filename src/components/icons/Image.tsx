@@ -2,6 +2,8 @@ import * as React from "react";
 
 const SvgImage = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
     width="1792px"

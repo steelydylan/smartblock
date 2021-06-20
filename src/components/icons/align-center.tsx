@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const SvgAlignCenter = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width={1792} height={1792} viewBox="0 0 1792 1792" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={1792}
+    height={1792}
+    viewBox="0 0 1792 1792"
+    {...props}
+  >
     <title>{"center"}</title>
     <g id="bfe5ce98-ed3f-4197-9845-64f060ce92c6" data-name="\u30E9\u30D9\u30EB">
       <rect width={1792} height={256} />

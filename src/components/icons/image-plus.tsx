@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const SvgImagePlus = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width={60} height={55.118} viewBox="0 0 60 55.118" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={60}
+    height={55.118}
+    viewBox="0 0 60 55.118"
+    {...props}
+  >
     <g id="\u753B\u50CF\u8FFD\u52A0" transform="translate(-0.93 -75.66)">
       <g id="\u5185\u5BB9" transform="translate(11.697 82.834)">
         <ellipse

@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const SvgOrderedList = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg width={1792} height={1792} viewBox="0 0 1792 1792" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={1792}
+    height={1792}
+    viewBox="0 0 1792 1792"
+    {...props}
+  >
     <title>{"orderedlist"}</title>
     <g id="b3b81f28-1e36-4bd8-9f72-6ca2ae0e4ff1" data-name="\u30E9\u30D9\u30EB">
       <rect x={552} y={216.49} width={1240} height={256} />

@@ -1,12 +1,9 @@
 {
   "name": "@steelydylan/smartblock",
-  "version": "1.3.4",
+  "version": "1.3.6",
   "description": "intuitive block based wysiwyg editor",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "exports": {
-    "./": "./lib"
-  },
   "publishConfig": {
     "access": "public"
   },

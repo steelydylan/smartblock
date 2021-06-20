@@ -7,3 +7,4 @@ gatsby/public/*
 gatsby2/.cache/*
 gatsby2/node_modules/*
 gatsby2/public/*
+lib/*

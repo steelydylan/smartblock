@@ -37,6 +37,9 @@ export default class Paragraph extends Extension {
         {
           tag: 'p',
           getAttrs(dom) {
+            if (dom.querySelector('img')) {
+              return false;
+            }
             return {
               id: dom.getAttribute('id') || uuid(),
               align: dom.style.textAlign

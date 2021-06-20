@@ -46,6 +46,7 @@
   }
   &:not(.is-active) {
     color: #777;
+    background: transparent;
     
     &:focus {
       outline: 0;
